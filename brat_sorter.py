@@ -1,7 +1,7 @@
 '''Sort entities in a brat stand-off file.
 
 Editing annotations in brat simply amends the annotation file. New and changed
-entities can be added at the end fo teh existing entities. 
+entities can be added at the end of the existing entities. 
 For some of our tasks, it is easier if the entities are listed in offset order.
 This script has two functions: one to read and sort on start offset the
 entities in a brat file returning a list of tuples, and one to write the list
