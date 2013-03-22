@@ -15,3 +15,5 @@ Licence version 2.
 brat_sorter.py
 : Python 3 script to reorder entities in a brat stand-off file
 
+visualise.py
+: Python 3 script to apply brat stand-off mark-up to its matching text file and produce a standalone HTML page to visualise the mark-up; accepts optional parameters to add navigation buttons to two other HTML pages, `prev` and `next`
