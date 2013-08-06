@@ -12,6 +12,8 @@ Licence version 2.
 
 ## Contents ##
 
+**Files**
+
 brat_sorter.py
 : Python 3 script to reorder entities in a brat stand-off file
 
@@ -20,3 +22,12 @@ call_ggws.php
 
 visualise.py
 : Python 3 script to apply brat stand-off mark-up to its matching text file and produce a standalone HTML page to visualise the mark-up; accepts optional parameters to add navigation buttons to two other HTML pages, `prev` and `next`
+
+**Folders**
+
+call_gnrd
+: How to call Global Names Recognition and Discovery, GNRD, running at the Oxford eResearch Centre, OeRC. Individual files are:
+
+- `call_gnrd.py` - samples Python script to invoke the service
+- `call_gnrd_sample.txt` and `call_gnrd_sample_big.txt` are two sample texts to use with the script
+- `call_gnrd_sample_results.json` and `call_gnrd_sample_big_results.json` are the output from running the script to compare your results against; the script writes its output to `call_gnrd_sample.json` and `call_gnrd_sample_big.json`
