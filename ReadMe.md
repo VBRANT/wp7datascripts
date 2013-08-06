@@ -15,5 +15,8 @@ Licence version 2.
 brat_sorter.py
 : Python 3 script to reorder entities in a brat stand-off file
 
+call_ggws.php
+: PHP script to invoke GoldenGATE web services. This sample uses the geolocation service to extract longitude and latitude from the embedded text. The script shows how to submit a request to GgWS and then repeatedly poll the service until the request is completed.
+
 visualise.py
 : Python 3 script to apply brat stand-off mark-up to its matching text file and produce a standalone HTML page to visualise the mark-up; accepts optional parameters to add navigation buttons to two other HTML pages, `prev` and `next`
