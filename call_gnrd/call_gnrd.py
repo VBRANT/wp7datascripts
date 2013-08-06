@@ -1,4 +1,4 @@
-'''Sample Python code to invoke GNRD name doiscovery service.
+'''Sample Python code to invoke GNRD name discovery service.
 
 Two sample files are provided: call_gnrd_sample.txt and
 call_gnrd_sample_big.txt. The expected results are shown in
@@ -35,12 +35,12 @@ def call_gnrd(service_url, source_file):
         resp = json.loads(json_resp.decode('utf-8'))
         results_file = source_file.replace('txt', 'json')
         with open(results_file, 'w', encoding='utf-8') as f:
-            f.write(str(resp))
+            json.dump(resp, f)
             print('Request completed\nResults written to {}'.format(results_file))
     else:
         print('Problem with request\n{}'.format(str(resp)))
 
 if __name__ == '__main__':
     call_gnrd('http://gnrd.oerc.ox.ac.uk/name_finder.json',
-              'call_gnrd_sample.txt')
-              # 'call_gnrd_sample_big.txt')
+              # 'call_gnrd_sample.txt')
+              'call_gnrd_sample_big.txt')
