@@ -19,9 +19,7 @@ from urllib import request, parse
 def call_gnrd(service_url, source_file):
     with open(source_file, 'r', encoding='utf-8') as f:
         text_to_parse = f.read()
-    parms = {
-    'text' : text_to_parse
-    }
+    parms = {'text' : text_to_parse}
     querystring = parse.urlencode(parms)
     response = request.urlopen(service_url+'?' + querystring)
     json_resp = response.read()
