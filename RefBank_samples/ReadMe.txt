@@ -7,7 +7,7 @@ how you can invoke RefBank programmatically.
 The scripts are _very_ simple, all values are hard coded. In 'production' use
 we would recommend you replace RefBank's URL with a variable, for example.
 
-David King <David.King@open.ac.uk> and Guido Sautter <>
+David King <David.King@open.ac.uk> and Guido Sautter <sautter@ipd.uka.de>
 for ViBRANT <http://vbrant.eu//>, August 2013
 
 License: GPLv2 <http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt>
