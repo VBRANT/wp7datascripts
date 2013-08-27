@@ -64,6 +64,7 @@ if ($initiate_request == '') {
             default:
                 echo "How did we get here?\n";
                 echo "{$response}\n";
+                $running = false;
         }
     }
 }
