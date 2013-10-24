@@ -31,3 +31,8 @@ call_gnrd
 - `call_gnrd.py` - samples Python script to invoke the service
 - `call_gnrd_sample.txt` and `call_gnrd_sample_big.txt` are two sample texts to use with the script
 - `call_gnrd_sample_results.json` and `call_gnrd_sample_big_results.json` are the output from running the script to compare your results against; the script writes its output to `call_gnrd_sample.json` and `call_gnrd_sample_big.json`
+
+## Licence ##
+
+This software is released under GNU General Public Licence version 2. A copy of the licence is included in this folder.
+ 
