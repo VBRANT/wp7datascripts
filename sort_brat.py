@@ -33,6 +33,7 @@ extract_stand_off = re.compile(
     '(?P<other_offsets>[\d; ]+)\t'
     '(?P<brat_text>.*$)')
 
+
 def sort_entities(filename):
     entities = []
     with open(filename, 'r', encoding='utf-8') as annotation_file:
@@ -47,31 +48,33 @@ def sort_entities(filename):
     entities.sort(key=lambda t: t.start_offset)
     return entities
 
-def write_entities(entities, filename):
-    with open(filename, 'w', encoding='utf-8', newline='\n') \
-        as brat_file:
+
+def write_entities(entities, file_name):
+    with open(file_name, 'w', encoding='utf-8', newline='\n') as brat_file:
         for idx, entity in enumerate(entities, 1):
             brat_file.write(
-                'T' + str(idx) + '\t' +
-                entity.brat_type + ' ' +
-                str(entity.start_offset) + ' ' +
-                entity.other_offsets + '\t' +
-                entity.brat_text + '\n')
+                'T{:d}\t{entity.brat_type} {entity.start_offset} {entity.other_offsets}\t{entity.brat_text}\n'
+                .format(idx, entity=entity))
+
 
 def sort_file(file_name):
     sorted_entities = sort_entities(file_name)
     write_entities(sorted_entities, file_name)
 
+
 def sort_folder(folder_name):
-    ann_files = (entry for entry in os.listdir(folder_name) if entry.endswith('ann'))
+    ann_files = (os.path.join(folder_name, filename)
+                 for filename in os.listdir(folder_name)
+                 if filename.endswith('ann'))
     for ann_file in ann_files:
-        file_name = folder_name + '/' + ann_file
-        sorted_entities = sort_entities(file_name)
-        write_entities(sorted_entities, file_name)
+        sorted_entities = sort_entities(ann_file)
+        write_entities(sorted_entities, ann_file)
 
 
 if __name__ == '__main__':
 
-    sort_file('aves_v1/d149.ann')
+    # sort_file('aves_v1/d149.ann')
 
     # sort_folder('aves_v1')
+    # sort_folder('mamm_v1')
+    sort_folder('bot_v1')
